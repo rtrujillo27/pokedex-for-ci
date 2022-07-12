@@ -26,9 +26,9 @@ jobs:
       - name: Deploy App
         uses: azurydev/deploy-action@v0
         with:
-          host: "72.167.41.179"
-          username: "cargo"
-          privateKey: "Cg5580*7gs@"
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          privateKey: ${{ secrets.SSH_KEY }}
           destination: /cargo/applications
           dependencies: true # update remote package.json, package-lock.json, and dependencies
           pm2: 0 # pm2 process name or id
