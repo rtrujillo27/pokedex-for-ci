@@ -24,10 +24,7 @@ jobs:
         run: npm ci
 
       - name: Deploy App
-      - uses: actions/checkout@v2
-        with:
-            fetch-depth: 0
       - uses: chrisjsimpson/deploy-wireguard-algo-vpn-action@v1
         with:
-            ssh-private-key: ${{ secrets.SSH_KEY }}
-            public-ip: ${{ secrets.HOST }}
+          public-ip: ${{secrets.HOST }}
+          ssh-private-key: ${{secrets.SSH_KEY }}
